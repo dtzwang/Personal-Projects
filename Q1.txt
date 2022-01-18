@@ -1,0 +1,10 @@
+Analysis shown below
+a)
+
+One issue with the dataset is the inclusion of multiple types of outliers that mess with the quality of data, especially when trying to report an average order value. The two types of outliers are orders coming from what we will call 'luxury' sneaker shops, who sell shoes well above 25,000 dollars, more than we would expect from a sneaker sale. The second type of outlier comes from what we will call 'bulk sellers', who sell shoes in quantities of 2000 pairs, greatly inflating the average order value. To eliminate the impact of these outliers on the average order value, we can segment the data into subsets that will better report what we are looking for. We can use histograms to find clear divisions between the outliers and most of the data to determine where to segment the data. Our results show that luxury shoe sales have an AOV of 49,213 dollars. Then, the non-luxury sales can be segmented into bulk orders at an average of 704,000 dollars and individual non-luxury orders averaging an AOV of 303 dollars.
+b)
+
+The metric I would report instead would be the average item price alongside the number of items ordered. This way, we could include the bulk orders into the average item price without having a skewed result, and we could include the luxury items into the number of items ordered without having an inaccurate result.
+c)
+
+We see that the average cost of a non-luxurious sneaker is around 152 dollars, and the average number of shoes bought not in bulk is around 2 pairs.

@@ -1,0 +1,24 @@
+Q2
+a) 196 orders were shipped by Speedy Express
+SELECT COUNT(OrderID) FROM Orders;
+
+b)We see that the employee with the most orders has the last name Peacock.
+SELECT O.EmployeeID, E.LastName, COUNT(O.OrderID) AS 'Orders per Employee'
+FROM Orders AS O
+INNER JOIN Employees AS E
+ON O.EmployeeID = E.EmployeeID
+GROUP BY O.EmployeeID, E.LastName
+ORDER BY COUNT(O.EmployeeID) DESC;
+
+c) We see that the most ordered item from German customers is Gorgonzola Telino with 5 orders
+SELECT COUNT(OrderDetails.ProductID) AS "Number of Orders", (OrderDetails.ProductID), Products.ProductName
+FROM (((Customers
+INNER JOIN Orders
+ON Customers.CustomerID = Orders.CustomerID)
+INNER JOIN OrderDetails
+ON Orders.OrderID = OrderDetails.OrderID)
+INNER JOIN Products
+ON OrderDetails.ProductID = Products.ProductID)
+WHERE COUNTRY = "Germany"
+GROUP BY OrderDetails.ProductID, Products.ProductName
+ORDER BY COUNT(OrderDetails.ProductID) DESC;
